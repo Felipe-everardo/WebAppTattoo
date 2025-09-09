@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebAppTattooContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppTattooContext") ?? throw new InvalidOperationException("Connection string 'WebAppTattooContext' not found.")));
 
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

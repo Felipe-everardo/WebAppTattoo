@@ -14,7 +14,7 @@ namespace WebAppTattoo.Data
         {
         }
 
-        public DbSet<WebAppTattoo.Models.Client> Client { get; set; } = default!;
-        public DbSet<WebAppTattoo.Models.Tattoo> Tattoo { get; set; } = default!;
+        public DbSet<Client> Client { get; set; } = default!;
+        public DbSet<Tattoo> Tattoo { get; set; } = default!;
     }
 }

@@ -13,4 +13,14 @@ public class Tattoo
     
     public int ClientId { get; set; }
     public Client Client { get; set; }
+
+    public Tattoo() { }
+
+    public Tattoo(DateTime sessionDate, decimal valuePaid, PaymentMethod paymentMethod, int clientId)
+    {
+        SessionDate = sessionDate;
+        ValuePaid = valuePaid;
+        PaymentMethod = paymentMethod;
+        ClientId = clientId;
+    }
 }
