@@ -3,19 +3,33 @@ using Microsoft.Extensions.DependencyInjection;
 using WebAppTattoo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<WebAppTattooContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppTattooContext") ?? throw new InvalidOperationException("Connection string 'WebAppTattooContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppTattooContext") 
+    ?? throw new InvalidOperationException("Connection string 'WebAppTattooContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<SeedingService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
+{
+    // Ações para o ambiente de desenvolvimento
+    app.UseDeveloperExceptionPage(); 
+
+    // Configurações para o seeding
+    using (var scope = app.Services.CreateScope())
+    {
+        var seedingService = scope.ServiceProvider.GetRequiredService<SeedingService>();
+        seedingService.Seed();
+    }
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
