@@ -1,6 +1,6 @@
 ﻿namespace WebAppTattoo.Models;
 
-public enum PaymentMethod
+public enum PaymentMethod : int
 {
     Pix = 1,
     Debito = 2,
