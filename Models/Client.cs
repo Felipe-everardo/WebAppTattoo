@@ -47,23 +47,4 @@ public class Client
 
         return 0;
     }
-
-    /*
-     public void RemoveTattoo(Tattoo tattoo)
-     {
-         if (tattoo != null && Tattoos.Contains(tattoo))
-         {
-             Tattoos.Remove(tattoo);
-         }
-     }
- 
-    public int TotalTattoos
-    {
-        get { return Tattoos.Count(); }
-    }
-
-    public decimal TotalValuePaid
-    {
-        get { return Tattoos.Sum(t => t.ValuePaid); }
-    }*/
 }

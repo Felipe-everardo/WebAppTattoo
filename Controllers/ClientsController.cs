@@ -7,22 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebAppTattoo.Data;
 using WebAppTattoo.Models;
+using WebAppTattoo.Services;
 
 namespace WebAppTattoo.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly WebAppTattooContext _context;
+        private readonly ClientService _clientService;
 
-        public ClientsController(WebAppTattooContext context)
+        // O construtor agora injeta o serviço, não o DbContext
+        public ClientsController(ClientService clientService)
         {
-            _context = context;
+            _clientService = clientService;
         }
 
         // GET: Clients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Client.ToListAsync());
+            // O serviço é responsável por buscar a lista de clientes
+            return View(await _clientService.GetAllClientsAsync());
         }
 
         // GET: Clients/Details/5
@@ -33,8 +36,9 @@ namespace WebAppTattoo.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.Id == id);
+            // O serviço busca o cliente, incluindo suas tatuagens
+            var client = await _clientService.GetClientWithTattoosAsync(id.Value);
+
             if (client == null)
             {
                 return NotFound();
@@ -50,16 +54,14 @@ namespace WebAppTattoo.Controllers
         }
 
         // POST: Clients/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,CellPhone,Email,BirthDate,CPF,Address,Instagram")] Client client)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
-                await _context.SaveChangesAsync();
+                // O serviço lida com a lógica de adição e o salvamento
+                await _clientService.AddClientAsync(client);
                 return RedirectToAction(nameof(Index));
             }
             return View(client);
@@ -73,7 +75,8 @@ namespace WebAppTattoo.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client.FindAsync(id);
+            // O serviço busca o cliente pelo Id
+            var client = await _clientService.FindClientAsync(id.Value);
             if (client == null)
             {
                 return NotFound();
@@ -82,8 +85,6 @@ namespace WebAppTattoo.Controllers
         }
 
         // POST: Clients/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CellPhone,Email,BirthDate,CPF,Address,Instagram")] Client client)
@@ -97,12 +98,14 @@ namespace WebAppTattoo.Controllers
             {
                 try
                 {
-                    _context.Update(client);
-                    await _context.SaveChangesAsync();
+                    // O serviço lida com a atualização
+                    await _clientService.UpdateClientAsync(client);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.Id))
+                    // O serviço pode incluir o método de checagem, 
+                    // mas podemos manter aqui por ser uma checagem de concorrência.
+                    if (!await _clientService.ClientExistsAsync(client.Id))
                     {
                         return NotFound();
                     }
@@ -124,8 +127,8 @@ namespace WebAppTattoo.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.Id == id);
+            // O serviço busca o cliente
+            var client = await _clientService.FindClientAsync(id.Value);
             if (client == null)
             {
                 return NotFound();
@@ -139,19 +142,9 @@ namespace WebAppTattoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var client = await _context.Client.FindAsync(id);
-            if (client != null)
-            {
-                _context.Client.Remove(client);
-            }
-
-            await _context.SaveChangesAsync();
+            // O serviço lida com a exclusão
+            await _clientService.DeleteClientAsync(id);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool ClientExists(int id)
-        {
-            return _context.Client.Any(e => e.Id == id);
         }
     }
 }

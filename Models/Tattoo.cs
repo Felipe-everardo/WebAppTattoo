@@ -1,7 +1,4 @@
-﻿using NuGet.Protocol.Plugins;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace WebAppTattoo.Models;
+﻿namespace WebAppTattoo.Models;
 
 public class Tattoo
 {
@@ -12,15 +9,16 @@ public class Tattoo
     public string? PostScript { get; set; }
     
     public int ClientId { get; set; }
-    public Client Client { get; set; }
+    public Client? Client { get; set; }
 
     public Tattoo() { }
 
-    public Tattoo(DateTime sessionDate, decimal valuePaid, PaymentMethod paymentMethod, int clientId)
+    public Tattoo(DateTime sessionDate, decimal valuePaid, PaymentMethod paymentMethod,Client client, int clientId)
     {
         SessionDate = sessionDate;
         ValuePaid = valuePaid;
         PaymentMethod = paymentMethod;
+        Client = client;
         ClientId = clientId;
     }
 }
