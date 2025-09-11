@@ -1,4 +1,4 @@
-﻿namespace WebAppTattoo.Models;
+﻿namespace WebAppTattoo.Models.Enums;
 
 public enum PaymentMethod : int
 {

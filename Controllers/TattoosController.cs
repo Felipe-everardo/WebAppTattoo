@@ -48,7 +48,7 @@ namespace WebAppTattoo.Controllers
         // GET: Tattoos/Create
         public IActionResult Create()
         {
-            ViewData["ClientId"] = new SelectList(_context.Client, "Id", "Id");
+            ViewData["ClientId"] = new SelectList(_context.Client, "Id", "Name");
             return View();
         }
 

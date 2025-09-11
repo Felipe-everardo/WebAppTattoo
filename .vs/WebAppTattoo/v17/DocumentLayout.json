@@ -11,44 +11,36 @@
       "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:models\\tattoo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\data\\webapptattoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:data\\webapptattoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\data\\seedingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:data\\seedingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\controllers\\tattooscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:controllers\\tattooscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\models\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:models\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\tattoos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\tattoos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\tattoos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\tattoos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\clients\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\clients\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\models\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:models\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|c:\\users\\feeve\\onedrive\\\u00E1rea de trabalho\\dev\\projetos\\tattoowebapp\\webapptattoo\\views\\clients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B304001-CCF2-4818-845E-9B459C323D42}|WebAppTattoo.csproj|solutionrelative:views\\clients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,54 +70,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PaymentMethod.cs",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\Enums\\PaymentMethod.cs",
+              "RelativeDocumentMoniker": "Models\\Enums\\PaymentMethod.cs",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\Enums\\PaymentMethod.cs",
+              "RelativeToolTip": "Models\\Enums\\PaymentMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T06:01:19.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TattoosController.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\TattoosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TattoosController.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\TattoosController.cs",
-              "RelativeToolTip": "Controllers\\TattoosController.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAawJgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T06:00:38.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Clients\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Clients\\Create.cshtml",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Clients\\Create.cshtml",
-              "RelativeToolTip": "Views\\Clients\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-10T06:00:07.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClientService.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Services\\ClientService.cs",
-              "RelativeDocumentMoniker": "Services\\ClientService.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Services\\ClientService.cs",
-              "RelativeToolTip": "Services\\ClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:44.955Z",
+              "WhenOpened": "2025-09-11T17:13:03.123Z",
               "EditorCaption": ""
             },
             {
@@ -136,100 +89,112 @@
               "RelativeDocumentMoniker": "Models\\Tattoo.cs",
               "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\Tattoo.cs",
               "RelativeToolTip": "Models\\Tattoo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:41.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PaymentMethod.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\PaymentMethod.cs",
-              "RelativeDocumentMoniker": "Models\\PaymentMethod.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\PaymentMethod.cs",
-              "RelativeToolTip": "Models\\PaymentMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:39.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\ViewModels\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\ViewModels\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:32.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "Models\\Client.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Models\\Client.cs",
-              "RelativeToolTip": "Models\\Client.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:30.08Z",
+              "WhenOpened": "2025-09-11T17:12:47.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "WebAppTattooContext.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Data\\WebAppTattooContext.cs",
-              "RelativeDocumentMoniker": "Data\\WebAppTattooContext.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Data\\WebAppTattooContext.cs",
-              "RelativeToolTip": "Data\\WebAppTattooContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Title": "TattoosController.cs",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\TattoosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TattoosController.cs",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\TattoosController.cs",
+              "RelativeToolTip": "Controllers\\TattoosController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA2wDIAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:59:08.335Z",
+              "WhenOpened": "2025-09-10T23:09:49.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T05:56:02.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ClientsController.cs",
               "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\ClientsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClientsController.cs",
               "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Controllers\\ClientsController.cs",
               "RelativeToolTip": "Controllers\\ClientsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T17:45:45.027Z",
+              "WhenOpened": "2025-09-10T23:09:34.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeedingService.cs",
-              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Data\\SeedingService.cs",
-              "RelativeDocumentMoniker": "Data\\SeedingService.cs",
-              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Data\\SeedingService.cs",
-              "RelativeToolTip": "Data\\SeedingService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAiwDAAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "Services\\ClientService.cs",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Services\\ClientService.cs",
+              "RelativeToolTip": "Services\\ClientService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T22:07:47.758Z",
+              "WhenOpened": "2025-09-10T23:08:54.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Tattoos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tattoos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Tattoos\\Create.cshtml",
+              "RelativeToolTip": "Views\\Tattoos\\Create.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T23:05:12.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T23:05:07.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T23:05:06.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Clients\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Clients\\Index.cshtml",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Clients\\Index.cshtml",
+              "RelativeToolTip": "Views\\Clients\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T17:36:41.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Tattoos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tattoos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\feeve\\OneDrive\\\u00C1rea de Trabalho\\dev\\Projetos\\TattooWebApp\\WebAppTattoo\\Views\\Tattoos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Tattoos\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T17:24:45.001Z",
               "EditorCaption": ""
             }
           ]

@@ -24,7 +24,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="PaymentMethod" class="control-label"></label>
-                <select asp-for="PaymentMethod" class="form-control"></select>
+                <select asp-for="PaymentMethod" class="form-control"
+                        asp-items="Html.GetEnumSelectList<PaymentMethod>()">
+                </select>
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ClientId" class="control-label"></label>
-                <select asp-for="ClientId" class ="form-control" asp-items="ViewBag.ClientId"></select>
+                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -48,5 +50,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<WebAppTattoo.Models.Tattoo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tattoo";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>

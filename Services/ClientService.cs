@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebAppTattoo.Data;
 using WebAppTattoo.Models;
-
 namespace WebAppTattoo.Services;
 
 public class ClientService

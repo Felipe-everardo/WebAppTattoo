@@ -1,4 +1,6 @@
-﻿namespace WebAppTattoo.Models;
+﻿using WebAppTattoo.Models.Enums;
+
+namespace WebAppTattoo.Models;
 
 public class Tattoo
 {
