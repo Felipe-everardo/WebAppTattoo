@@ -14,6 +14,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<TattooService>();
 
 var app = builder.Build();
 

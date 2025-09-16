@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebAppTattoo.Data;
 using WebAppTattoo.Models;
 using WebAppTattoo.Services;
 
@@ -15,7 +14,6 @@ namespace WebAppTattoo.Controllers
     {
         private readonly ClientService _clientService;
 
-        // O construtor agora injeta o serviço, não o DbContext
         public ClientsController(ClientService clientService)
         {
             _clientService = clientService;
@@ -24,25 +22,17 @@ namespace WebAppTattoo.Controllers
         // GET: Clients
         public async Task<IActionResult> Index()
         {
-            // O serviço é responsável por buscar a lista de clientes
             return View(await _clientService.GetAllClientsAsync());
         }
 
         // GET: Clients/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            // O serviço busca o cliente, incluindo suas tatuagens
             var client = await _clientService.GetClientWithTattoosAsync(id.Value);
 
-            if (client == null)
-            {
-                return NotFound();
-            }
+            if (client == null) return NotFound();
 
             return View(client);
         }
@@ -60,7 +50,6 @@ namespace WebAppTattoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                // O serviço lida com a lógica de adição e o salvamento
                 await _clientService.AddClientAsync(client);
                 return RedirectToAction(nameof(Index));
             }
@@ -70,17 +59,11 @@ namespace WebAppTattoo.Controllers
         // GET: Clients/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            // O serviço busca o cliente pelo Id
             var client = await _clientService.FindClientAsync(id.Value);
-            if (client == null)
-            {
-                return NotFound();
-            }
+            if (client == null) return NotFound();
+
             return View(client);
         }
 
@@ -89,22 +72,16 @@ namespace WebAppTattoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CellPhone,Email,BirthDate,CPF,Address,Instagram")] Client client)
         {
-            if (id != client.Id)
-            {
-                return NotFound();
-            }
+            if (id != client.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // O serviço lida com a atualização
                     await _clientService.UpdateClientAsync(client);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    // O serviço pode incluir o método de checagem, 
-                    // mas podemos manter aqui por ser uma checagem de concorrência.
                     if (!await _clientService.ClientExistsAsync(client.Id))
                     {
                         return NotFound();
@@ -122,17 +99,10 @@ namespace WebAppTattoo.Controllers
         // GET: Clients/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            // O serviço busca o cliente
             var client = await _clientService.FindClientAsync(id.Value);
-            if (client == null)
-            {
-                return NotFound();
-            }
+            if (client == null) return NotFound();
 
             return View(client);
         }
@@ -142,7 +112,6 @@ namespace WebAppTattoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            // O serviço lida com a exclusão
             await _clientService.DeleteClientAsync(id);
             return RedirectToAction(nameof(Index));
         }

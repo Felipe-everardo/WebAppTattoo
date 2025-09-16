@@ -1,0 +1,52 @@
+﻿@* WebAppTattoo/Views/Tattoos/Summary.cshtml *@
+
+@{
+    ViewData["Title"] = "Resumo de Tatuagens";
+}
+
+<h1>Resumo de Tatuagens</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Summary">
+            <h4>Pesquisar por Período</h4>
+            <div class="form-group">
+                <label for="startDate" class="control-label">Data de Início</label>
+                <input name="startDate" type="date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="endDate" class="control-label">Data de Fim</label>
+                <input name="endDate" type="date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pesquisar" class="btn btn-primary mt-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (ViewData["TotalTattoos"] != null)
+{
+    <hr />
+    <h3 class="mt-4">Resultados da Pesquisa (@ViewData["StartDate"] até @ViewData["EndDate"])</h3>
+    <dl class="row">
+        <dt class="col-sm-4">Total de Tatuagens:</dt>
+        <dd class="col-sm-8">@ViewData["TotalTattoos"]</dd>
+
+        <dt class="col-sm-4">Valor Total Arrecadado:</dt>
+        <dd class="col-sm-8">
+            @{
+                // Conversão segura do valor para decimal.
+                // O 'if' acima já garante que o valor não é nulo.
+                var totalValue = (decimal)ViewData["TotalValue"];
+            }
+            @totalValue.ToString("C")
+        </dd>
+    </dl>
+}
+
+<div>
+    <a asp-action="Index">Voltar para a Lista</a>
+</div>
