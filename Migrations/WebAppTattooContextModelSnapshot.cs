@@ -58,11 +58,12 @@ namespace WebAppTattoo.Migrations
 
             modelBuilder.Entity("WebAppTattoo.Models.Tattoo", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
@@ -80,7 +81,7 @@ namespace WebAppTattoo.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.HasIndex("ClientId");
 

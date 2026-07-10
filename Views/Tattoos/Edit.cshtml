@@ -1,54 +1,53 @@
-﻿@model WebAppTattoo.Models.Tattoo
+@model WebAppTattoo.Models.Tattoo
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar sessao";
 }
 
-<h1>Edit</h1>
-
-<h4>Tattoo</h4>
+<h1>Editar sessao</h1>
+<p class="text-muted">Atualize os dados de atendimento e pagamento.</p>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
-            <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mb-3">
                 <label asp-for="SessionDate" class="control-label"></label>
-                <input asp-for="SessionDate" class="form-control" />
+                <input asp-for="SessionDate" type="date" class="form-control" />
                 <span asp-validation-for="SessionDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="PostScript" class="control-label"></label>
+                <input asp-for="PostScript" class="form-control" />
+                <span asp-validation-for="PostScript" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="PaymentMethod" class="control-label"></label>
+                <select asp-items="Html.GetEnumSelectList<PaymentMethod>()" asp-for="PaymentMethod" class="form-control"></select>
+                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
                 <label asp-for="ValuePaid" class="control-label"></label>
                 <input asp-for="ValuePaid" class="form-control" />
                 <span asp-validation-for="ValuePaid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PaymentMethod" class="control-label"></label>
-                <select asp-for="PaymentMethod" class="form-control"></select>
-                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PostScript" class="control-label"></label>
-                <input asp-for="PostScript" class="form-control" />
-                <span asp-validation-for="PostScript" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ClientId" class="control-label"></label>
-                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
-                <span asp-validation-for="ClientId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar alteracoes" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "TattooStudio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="py-4">
+    <h1 class="display-5">TattooStudio</h1>
+    <p class="lead">Sistema MVC para organizar clientes, sessoes de tattoo e pagamentos do estudio.</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="border rounded p-3 h-100 bg-light">
+            <h4>Clientes</h4>
+            <p class="text-muted">Cadastre contatos e consulte o historico de sessoes de cada pessoa.</p>
+            <a asp-controller="Clients" asp-action="Index">Ver clientes</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="border rounded p-3 h-100 bg-light">
+            <h4>Sessoes</h4>
+            <p class="text-muted">Registre data, descricao, forma de pagamento e valor pago.</p>
+            <a asp-controller="Tattoos" asp-action="Index">Ver sessoes</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="border rounded p-3 h-100 bg-light">
+            <h4>Resumo financeiro</h4>
+            <p class="text-muted">Filtre atendimentos por periodo e acompanhe o valor arrecadado.</p>
+            <a asp-controller="Tattoos" asp-action="Summary">Abrir resumo</a>
+        </div>
+    </div>
 </div>

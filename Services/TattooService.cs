@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using WebAppTattoo.Data;
 using WebAppTattoo.Models;
 
@@ -14,34 +13,32 @@ public class TattooService
         _context = context;
     }
 
-    // Retorna todas as tatuagens, incluindo as informações do cliente
     public async Task<List<Tattoo>> GetAllTattoosWithClientsAsync()
     {
-        return await _context.Tattoo.Include(t => t.Client).ToListAsync();
+        return await _context.Tattoo
+            .Include(t => t.Client)
+            .OrderByDescending(t => t.SessionDate)
+            .ToListAsync();
     }
 
-    // Busca uma tatuagem por Id, incluindo o cliente
     public async Task<Tattoo?> GetTattooWithClientAsync(int id)
     {
         return await _context.Tattoo
             .Include(t => t.Client)
-            .FirstOrDefaultAsync(m => m.id == id);
+            .FirstOrDefaultAsync(m => m.Id == id);
     }
 
-    // Adiciona uma nova tatuagem
     public async Task AddTattooAsync(Tattoo tattoo)
     {
         _context.Tattoo.Add(tattoo);
         await _context.SaveChangesAsync();
     }
 
-    // Encontra uma tatuagem pelo Id
     public async Task<Tattoo?> FindTattooAsync(int id)
     {
         return await _context.Tattoo.FindAsync(id);
     }
 
-    // Deleta uma tatuagem
     public async Task DeleteTattooAsync(int id)
     {
         var tattoo = await _context.Tattoo.FindAsync(id);
@@ -52,13 +49,11 @@ public class TattooService
         }
     }
 
-    // Verifica se uma tatuagem existe
     public async Task<bool> TattooExistsAsync(int id)
     {
-        return await _context.Tattoo.AnyAsync(e => e.id == id);
+        return await _context.Tattoo.AnyAsync(e => e.Id == id);
     }
 
-    // Atualiza uma tatuagem
     public async Task UpdateTattooAsync(Tattoo tattoo)
     {
         _context.Update(tattoo);

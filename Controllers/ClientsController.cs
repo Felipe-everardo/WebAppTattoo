@@ -50,8 +50,15 @@ namespace WebAppTattoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _clientService.AddClientAsync(client);
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    await _clientService.AddClientAsync(client);
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (InvalidOperationException ex)
+                {
+                    ModelState.AddModelError(nameof(Client.CPF), ex.Message);
+                }
             }
             return View(client);
         }
@@ -90,6 +97,11 @@ namespace WebAppTattoo.Controllers
                     {
                         throw;
                     }
+                }
+                catch (InvalidOperationException ex)
+                {
+                    ModelState.AddModelError(nameof(Client.CPF), ex.Message);
+                    return View(client);
                 }
                 return RedirectToAction(nameof(Index));
             }

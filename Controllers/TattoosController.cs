@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebAppTattoo.Models;
+using WebAppTattoo.Models.ViewModels;
 using WebAppTattoo.Services;
 
 namespace WebAppTattoo.Controllers
@@ -43,13 +44,13 @@ namespace WebAppTattoo.Controllers
         {
             // O ClientService é usado aqui para pegar os dados para o dropdown
             ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name");
-            return View();
+            return View(new Tattoo { SessionDate = DateTime.Today });
         }
 
         // POST: Tattoos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
+        public async Task<IActionResult> Create([Bind("Id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
         {
             if (ModelState.IsValid)
             {
@@ -74,9 +75,9 @@ namespace WebAppTattoo.Controllers
         // POST: Tattoos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
         {
-            if (id != tattoo.id) return NotFound();
+            if (id != tattoo.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -86,7 +87,7 @@ namespace WebAppTattoo.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await _tattooService.TattooExistsAsync(tattoo.id))
+                    if (!await _tattooService.TattooExistsAsync(tattoo.Id))
                     {
                         return NotFound();
                     }
@@ -125,26 +126,31 @@ namespace WebAppTattoo.Controllers
         // GET: Tattoos/Summary
         public IActionResult Summary()
         {
-            return View();
+            return View(new TattooSummaryViewModel());
         }
 
         // POST: Tattoos/Summary
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Summary(DateTime startDate, DateTime endDate)
+        public async Task<IActionResult> Summary(TattooSummaryViewModel viewModel)
         {
-            // O controlador recebe as datas do formulário.
-            // Ele chama o serviço para obter o resumo.
-            var summary = await _tattooService.GetTattooSummaryAsync(startDate, endDate);
+            if (viewModel.EndDate < viewModel.StartDate)
+            {
+                ModelState.AddModelError(nameof(TattooSummaryViewModel.EndDate), "A data final deve ser maior ou igual a data inicial.");
+            }
 
-            // O resultado é passado para a View por meio de um ViewData.
-            // É uma boa prática usar um ViewModel, mas para simplicidade, usamos o ViewData.
-            ViewData["TotalTattoos"] = summary.totalTattoos;
-            ViewData["TotalValue"] = summary.totalValue;
-            ViewData["StartDate"] = startDate.Date.ToShortDateString();
-            ViewData["EndDate"] = endDate.Date.ToShortDateString();
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
 
-            return View("Summary");
+            var summary = await _tattooService.GetTattooSummaryAsync(viewModel.StartDate, viewModel.EndDate);
+
+            viewModel.TotalTattoos = summary.totalTattoos;
+            viewModel.TotalValue = summary.totalValue;
+            viewModel.HasResult = true;
+
+            return View(viewModel);
         }
     }
 }

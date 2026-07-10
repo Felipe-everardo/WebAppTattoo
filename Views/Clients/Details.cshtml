@@ -1,60 +1,93 @@
-﻿@model WebAppTattoo.Models.Client
+@model WebAppTattoo.Models.Client
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Historico do cliente";
+    var tattoos = Model.Tattoos.OrderByDescending(t => t.SessionDate).ToList();
+    var totalPaid = tattoos.Sum(t => t.ValuePaid);
 }
 
-<h1>Details</h1>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h1 class="mb-1">@Model.Name</h1>
+        <p class="text-muted mb-0">Historico do cliente e sessoes realizadas.</p>
+    </div>
+    <div>
+        <a asp-controller="Tattoos" asp-action="Create" class="btn btn-primary">Nova sessao</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Editar cliente</a>
+    </div>
+</div>
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CellPhone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CellPhone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Instagram)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Instagram)
-        </dd>
-    </dl>
+<div class="row mb-4">
+    <div class="col-md-7">
+        <h4>Dados do cliente</h4>
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.CellPhone)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.CellPhone)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BirthDate)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.BirthDate)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.CPF)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.CPF)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Address)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Instagram)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Instagram)</dd>
+        </dl>
+    </div>
+    <div class="col-md-5">
+        <div class="border rounded p-3 bg-light">
+            <h4 class="mb-3">Resumo</h4>
+            <dl class="row mb-0">
+                <dt class="col-7">Sessoes registradas</dt>
+                <dd class="col-5 text-end">@tattoos.Count</dd>
+
+                <dt class="col-7">Total pago</dt>
+                <dd class="col-5 text-end">@totalPaid.ToString("C")</dd>
+            </dl>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<h4>Historico de sessoes</h4>
+
+@if (tattoos.Any())
+{
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descricao</th>
+                <th>Pagamento</th>
+                <th class="text-end">Valor</th>
+                <th class="text-end">Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var tattoo in tattoos)
+{
+            <tr>
+                <td>@tattoo.SessionDate.ToShortDateString()</td>
+                <td>@tattoo.PostScript</td>
+                <td>@tattoo.PaymentMethod</td>
+                <td class="text-end">@tattoo.ValuePaid.ToString("C")</td>
+                <td class="text-end">
+                    <a asp-controller="Tattoos" asp-action="Details" asp-route-id="@tattoo.Id">Detalhes</a> |
+                    <a asp-controller="Tattoos" asp-action="Edit" asp-route-id="@tattoo.Id">Editar</a>
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-muted">Este cliente ainda nao possui sessoes registradas.</p>
+}
+
+<a asp-action="Index">Voltar para clientes</a>

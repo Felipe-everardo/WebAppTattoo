@@ -20,11 +20,14 @@ public class ClientService
 
     public async Task AddClientAsync(Client client)
     {
-        var existingClient = await _context.Client.FirstOrDefaultAsync(c => c.CPF == client.CPF);
-
-        if (existingClient != null)
+        if (!string.IsNullOrWhiteSpace(client.CPF))
         {
-            throw new Exception("Cliente já cadastrado");
+            var existingClient = await _context.Client.FirstOrDefaultAsync(c => c.CPF == client.CPF);
+
+            if (existingClient != null)
+            {
+                throw new InvalidOperationException("Cliente já cadastrado");
+            }
         }
 
         _context.Client.Add(client);
@@ -45,6 +48,17 @@ public class ClientService
 
     public async Task UpdateClientAsync(Client client)
     {
+        if (!string.IsNullOrWhiteSpace(client.CPF))
+        {
+            var existingClient = await _context.Client
+                .FirstOrDefaultAsync(c => c.CPF == client.CPF && c.Id != client.Id);
+
+            if (existingClient != null)
+            {
+                throw new InvalidOperationException("Ja existe outro cliente cadastrado com este CPF.");
+            }
+        }
+
         _context.Update(client);
         await _context.SaveChangesAsync();
     }

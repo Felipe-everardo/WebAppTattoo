@@ -1,69 +1,41 @@
-﻿@model IEnumerable<WebAppTattoo.Models.Client>
+@model IEnumerable<WebAppTattoo.Models.Client>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes";
 }
 
-<h1>Clients</h1>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h1 class="mb-1">Clientes</h1>
+        <p class="text-muted mb-0">Cadastro base para acompanhar contatos e historico de sessoes.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Novo cliente</a>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table table-striped table-hover">
+<table class="table table-hover align-middle">
     <thead>
-        <tr class="success">
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CellPhone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CPF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instagram)
-            </th>
-            <th></th>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.CellPhone)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.CPF)</th>
+            <th>@Html.DisplayNameFor(model => model.Instagram)</th>
+            <th class="text-end">Acoes</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CellPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CPF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instagram)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.CellPhone)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>@Html.DisplayFor(modelItem => item.CPF)</td>
+            <td>@Html.DisplayFor(modelItem => item.Instagram)</td>
+            <td class="text-end">
+                <a asp-action="Details" asp-route-id="@item.Id">Historico</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="link-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
