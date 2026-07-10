@@ -1,6 +1,6 @@
 # TattooStudio
 
-Sistema web MVC para gestao simples de um estudio de tatuagem. O projeto organiza clientes, sessoes realizadas, formas de pagamento e resumo financeiro por periodo.
+Sistema web MVC para gestão simples de um estúdio de tatuagem. O projeto organiza clientes, sessões realizadas, formas de pagamento e resumo financeiro por período.
 
 ## Tecnologias
 
@@ -12,12 +12,12 @@ Sistema web MVC para gestao simples de um estudio de tatuagem. O projeto organiz
 
 ## Funcionalidades
 
-- Cadastro, edicao, listagem e exclusao de clientes.
-- Cadastro, edicao, listagem e exclusao de sessoes de tattoo.
-- Vinculo entre cliente e sessao.
-- Historico de sessoes dentro da pagina de detalhes do cliente.
-- Validacao de campos obrigatorios e CPF duplicado.
-- Resumo financeiro por periodo com total de sessoes e valor arrecadado.
+- Cadastro, edição, listagem e exclusão de clientes.
+- Cadastro, edição, listagem e exclusão de sessões de tattoo.
+- Vínculo entre cliente e sessão.
+- Histórico de sessões dentro da página de detalhes do cliente.
+- Validação de campos obrigatórios e CPF duplicado.
+- Resumo financeiro por período com total de sessões e valor arrecadado.
 
 ## Como executar
 
@@ -28,4 +28,4 @@ Sistema web MVC para gestao simples de um estudio de tatuagem. O projeto organiz
 
 ## Objetivo do projeto
 
-Este projeto foi desenvolvido como estudo pratico de ASP.NET Core MVC, Entity Framework Core e modelagem de um fluxo de negocio real. A ideia e demonstrar dominio de CRUD, relacionamento entre entidades, validacoes, consultas com filtros e organizacao basica em camadas.
+Este projeto foi desenvolvido como estudo prático de ASP.NET Core MVC, Entity Framework Core e modelagem de um fluxo de negócio real. A ideia é demonstrar domínio de CRUD, relacionamento entre entidades, validações, consultas com filtros e organização básica em camadas.
