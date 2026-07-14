@@ -4,43 +4,52 @@
     ViewData["Title"] = "Sessoes";
 }
 
-<div class="d-flex align-items-center justify-content-between mb-3">
+<section class="page-header">
     <div>
-        <h1 class="mb-1">Sessoes</h1>
-        <p class="text-muted mb-0">Controle de atendimentos, pagamentos e descricoes de cada trabalho.</p>
+        <div class="page-kicker">Atendimento</div>
+        <h1>Sessoes</h1>
+        <p class="page-description">Controle de atendimentos, pagamentos e descricoes de cada trabalho.</p>
     </div>
-    <div>
+    <div class="toolbar">
         <a asp-action="Summary" class="btn btn-outline-secondary">Resumo financeiro</a>
         <a asp-action="Create" class="btn btn-primary">Nova sessao</a>
     </div>
-</div>
+</section>
 
-<table class="table table-hover align-middle">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.SessionDate)</th>
-            <th>@Html.DisplayNameFor(model => model.Client)</th>
-            <th>@Html.DisplayNameFor(model => model.PostScript)</th>
-            <th>@Html.DisplayNameFor(model => model.PaymentMethod)</th>
-            <th class="text-end">@Html.DisplayNameFor(model => model.ValuePaid)</th>
-            <th class="text-end">Acoes</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="panel table-panel">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SessionDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Client)</th>
+                <th>@Html.DisplayNameFor(model => model.PostScript)</th>
+                <th>@Html.DisplayNameFor(model => model.PaymentMethod)</th>
+                <th class="text-end">@Html.DisplayNameFor(model => model.ValuePaid)</th>
+                <th class="text-end">Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
 @foreach (var item in Model)
 {
-        <tr>
-            <td>@item.SessionDate.ToShortDateString()</td>
-            <td>@Html.DisplayFor(modelItem => item.Client!.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.PostScript)</td>
-            <td>@Html.DisplayFor(modelItem => item.PaymentMethod)</td>
-            <td class="text-end">@item.ValuePaid.ToString("C")</td>
-            <td class="text-end">
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a class="link-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@item.SessionDate.ToShortDateString()</td>
+                <td>
+                    <a asp-controller="Clients" asp-action="Details" asp-route-id="@item.ClientId" class="fw-semibold">
+                        @Html.DisplayFor(modelItem => item.Client!.Name)
+                    </a>
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.PostScript)</td>
+                <td>@Html.DisplayFor(modelItem => item.PaymentMethod)</td>
+                <td class="text-end">@item.ValuePaid.ToString("C")</td>
+                <td>
+                    <div class="actions">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
+                    </div>
+                </td>
+            </tr>
 }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

@@ -40,25 +40,43 @@ namespace WebAppTattoo.Controllers
         }
 
         // GET: Tattoos/Create
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(int? clientId)
         {
-            // O ClientService é usado aqui para pegar os dados para o dropdown
-            ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name");
-            return View(new Tattoo { SessionDate = DateTime.Today });
+            var viewModel = new TattooFormViewModel { SessionDate = DateTime.Today };
+
+            if (clientId.HasValue)
+            {
+                viewModel.ClientId = clientId.Value;
+                viewModel.ReturnToClientId = clientId.Value;
+            }
+
+            await LoadClientSelectListAsync(viewModel.ClientId);
+            return View(viewModel);
         }
 
         // POST: Tattoos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
+        public async Task<IActionResult> Create(TattooFormViewModel viewModel)
         {
+            await ValidateClientAsync(viewModel.ClientId);
+
             if (ModelState.IsValid)
             {
+                var tattoo = ToTattoo(viewModel);
+
                 await _tattooService.AddTattooAsync(tattoo);
+
+                if (viewModel.ReturnToClientId.HasValue)
+                {
+                    return RedirectToAction("Details", "Clients", new { id = tattoo.ClientId });
+                }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name", tattoo.ClientId);
-            return View(tattoo);
+
+            await LoadClientSelectListAsync(viewModel.ClientId);
+            return View(viewModel);
         }
 
         // GET: Tattoos/Edit/5
@@ -68,26 +86,33 @@ namespace WebAppTattoo.Controllers
 
             var tattoo = await _tattooService.FindTattooAsync(id.Value);
             if (tattoo == null) return NotFound();
-            ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name", tattoo.ClientId);
-            return View(tattoo);
+
+            var viewModel = ToFormViewModel(tattoo);
+            viewModel.ReturnToClientId = tattoo.ClientId;
+
+            await LoadClientSelectListAsync(viewModel.ClientId);
+            return View(viewModel);
         }
 
         // POST: Tattoos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SessionDate,ValuePaid,PaymentMethod,PostScript,ClientId")] Tattoo tattoo)
+        public async Task<IActionResult> Edit(int id, TattooFormViewModel viewModel)
         {
-            if (id != tattoo.Id) return NotFound();
+            if (id != viewModel.Id) return NotFound();
+
+            await ValidateClientAsync(viewModel.ClientId);
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var tattoo = ToTattoo(viewModel);
                     await _tattooService.UpdateTattooAsync(tattoo);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await _tattooService.TattooExistsAsync(tattoo.Id))
+                    if (!await _tattooService.TattooExistsAsync(viewModel.Id))
                     {
                         return NotFound();
                     }
@@ -96,10 +121,17 @@ namespace WebAppTattoo.Controllers
                         throw;
                     }
                 }
+
+                if (viewModel.ReturnToClientId.HasValue)
+                {
+                    return RedirectToAction("Details", "Clients", new { id = viewModel.ClientId });
+                }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name", tattoo.ClientId);
-            return View(tattoo);
+
+            await LoadClientSelectListAsync(viewModel.ClientId);
+            return View(viewModel);
         }
 
         // GET: Tattoos/Delete/5
@@ -151,6 +183,45 @@ namespace WebAppTattoo.Controllers
             viewModel.HasResult = true;
 
             return View(viewModel);
+        }
+
+        private async Task LoadClientSelectListAsync(int? selectedClientId = null)
+        {
+            ViewData["ClientId"] = new SelectList(await _clientService.GetAllClientsAsync(), "Id", "Name", selectedClientId);
+        }
+
+        private async Task ValidateClientAsync(int clientId)
+        {
+            if (!await _clientService.ClientExistsAsync(clientId))
+            {
+                ModelState.AddModelError(nameof(TattooFormViewModel.ClientId), "Selecione um cliente valido.");
+            }
+        }
+
+        private static Tattoo ToTattoo(TattooFormViewModel viewModel)
+        {
+            return new Tattoo
+            {
+                Id = viewModel.Id,
+                SessionDate = viewModel.SessionDate,
+                ValuePaid = viewModel.ValuePaid,
+                PaymentMethod = viewModel.PaymentMethod,
+                PostScript = viewModel.PostScript,
+                ClientId = viewModel.ClientId
+            };
+        }
+
+        private static TattooFormViewModel ToFormViewModel(Tattoo tattoo)
+        {
+            return new TattooFormViewModel
+            {
+                Id = tattoo.Id,
+                SessionDate = tattoo.SessionDate,
+                ValuePaid = tattoo.ValuePaid,
+                PaymentMethod = tattoo.PaymentMethod,
+                PostScript = tattoo.PostScript,
+                ClientId = tattoo.ClientId
+            };
         }
     }
 }

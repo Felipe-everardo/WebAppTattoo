@@ -4,12 +4,16 @@
     ViewData["Title"] = "Editar cliente";
 }
 
-<h1>Editar cliente</h1>
-<p class="text-muted">Atualize os dados cadastrais mantendo o historico de sessoes.</p>
-<hr />
+<section class="page-header">
+    <div>
+        <div class="page-kicker">Cadastro</div>
+        <h1>Editar cliente</h1>
+        <p class="page-description">Atualize os dados cadastrais mantendo o historico de sessoes.</p>
+    </div>
+</section>
 
-<div class="row">
-    <div class="col-md-6">
+<div class="panel form-panel">
+    <div class="panel-body">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />

@@ -1,52 +1,59 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TattooStudio</title>
+    <title>@ViewData["Title"] - TattooStudio</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebAppTattoo.styles.css" asp-append-version="true" />
 </head>
-<body class="bg-body-secondary">
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+}
+<body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg app-navbar">
+            <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TattooStudio</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="Alternar navegacao">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            <a class="nav-link @(controller == "Home" && action == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Clients" asp-action="Index">Clientes</a>
+                            <a class="nav-link @(controller == "Clients" ? "active" : "")" asp-area="" asp-controller="Clients" asp-action="Index">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Tattoos" asp-action="Index">Sessoes</a>
+                            <a class="nav-link @(controller == "Tattoos" && action != "Summary" ? "active" : "")" asp-area="" asp-controller="Tattoos" asp-action="Index">Sessoes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Tattoos" asp-action="Summary">Resumo</a>
+                            <a class="nav-link @(controller == "Tattoos" && action == "Summary" ? "active" : "")" asp-area="" asp-controller="Tattoos" asp-action="Summary">Resumo</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="container app-shell">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="app-footer">
         <div class="container">
-            &copy; 2025 - WebAppTattoo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span>&copy; 2026 TattooStudio</span>
+            <span class="footer-divider">Controle de clientes, sessoes e pagamentos.</span>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

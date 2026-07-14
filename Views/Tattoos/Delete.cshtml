@@ -4,29 +4,35 @@
     ViewData["Title"] = "Excluir sessao";
 }
 
-<h1>Excluir sessao</h1>
+<section class="page-header">
+    <div>
+        <div class="page-kicker">Confirmacao</div>
+        <h1>Excluir sessao</h1>
+        <p class="page-description">Revise os dados antes de confirmar a exclusao.</p>
+    </div>
+</section>
 
-<h3>Tem certeza que deseja excluir esta sessao?</h3>
-<div>
-    <h4>@Model.Client?.Name</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SessionDate)</dt>
-        <dd class="col-sm-9">@Model.SessionDate.ToShortDateString()</dd>
+<div class="panel danger-panel">
+    <div class="panel-body">
+        <h2 class="h5 mb-3">@Model.Client?.Name</h2>
+        <dl class="row detail-list">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SessionDate)</dt>
+            <dd class="col-sm-9">@Model.SessionDate.ToShortDateString()</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PostScript)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(model => model.PostScript)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PostScript)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PostScript)</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ValuePaid)</dt>
-        <dd class="col-sm-9">@Model.ValuePaid.ToString("C")</dd>
-    </dl>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ValuePaid)</dt>
+            <dd class="col-sm-9">@Model.ValuePaid.ToString("C")</dd>
+        </dl>
 
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Excluir" class="btn btn-danger" />
-        <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
-    </form>
+        <form asp-action="Delete" class="toolbar justify-content-start mt-4">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir sessao" class="btn btn-danger" />
+            <a asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId" class="btn btn-outline-secondary">Cancelar</a>
+        </form>
+    </div>
 </div>

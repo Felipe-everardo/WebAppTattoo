@@ -4,32 +4,37 @@
     ViewData["Title"] = "Detalhes da sessao";
 }
 
-<h1>Detalhes da sessao</h1>
+<section class="page-header">
+    <div>
+        <div class="page-kicker">Sessao</div>
+        <h1>Detalhes da sessao</h1>
+        <p class="page-description">@Model.Client?.Name</p>
+    </div>
+    <div class="toolbar">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+        <a asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId" class="btn btn-outline-secondary">Voltar</a>
+    </div>
+</section>
 
-<div>
-    <h4>@Model.Client?.Name</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SessionDate)</dt>
-        <dd class="col-sm-9">@Model.SessionDate.ToShortDateString()</dd>
+<div class="panel">
+    <div class="panel-body">
+        <dl class="row detail-list">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SessionDate)</dt>
+            <dd class="col-sm-9">@Model.SessionDate.ToShortDateString()</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PostScript)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(model => model.PostScript)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PostScript)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PostScript)</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ValuePaid)</dt>
-        <dd class="col-sm-9">@Model.ValuePaid.ToString("C")</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ValuePaid)</dt>
+            <dd class="col-sm-9">@Model.ValuePaid.ToString("C")</dd>
 
-        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Client)</dt>
-        <dd class="col-sm-9">
-            <a asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId">@Model.Client?.Name</a>
-        </dd>
-    </dl>
-</div>
-
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
-    <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Client)</dt>
+            <dd class="col-sm-9">
+                <a asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId">@Model.Client?.Name</a>
+            </dd>
+        </dl>
+    </div>
 </div>

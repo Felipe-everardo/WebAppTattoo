@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,6 +63,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",
@@ -87,8 +91,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T23:13:15.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T23:13:15.634Z"
             },
             {
               "$type": "Document",
@@ -100,8 +103,7 @@
               "RelativeToolTip": "Data\\WebAppTattooContext.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T23:12:44.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T23:12:44.881Z"
             },
             {
               "$type": "Document",
@@ -113,8 +115,7 @@
               "RelativeToolTip": "Data\\SeedingService.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T23:12:10.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T23:12:10.801Z"
             },
             {
               "$type": "Document",
@@ -126,8 +127,7 @@
               "RelativeToolTip": "Controllers\\TattoosController.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAcwI0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T23:02:07.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T23:02:07.95Z"
             },
             {
               "$type": "Document",

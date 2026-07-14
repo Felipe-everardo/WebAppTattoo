@@ -1,32 +1,48 @@
 @{
-    ViewData["Title"] = "TattooStudio";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="py-4">
-    <h1 class="display-5">TattooStudio</h1>
-    <p class="lead">Sistema MVC para organizar clientes, sessoes de tattoo e pagamentos do estudio.</p>
-</div>
+<section class="page-header">
+    <div>
+        <div class="page-kicker">Painel do estudio</div>
+        <h1>TattooStudio</h1>
+        <p class="page-description">Organize clientes, sessoes realizadas e pagamentos em um fluxo unico.</p>
+    </div>
+    <div class="toolbar">
+        <a asp-controller="Clients" asp-action="Create" class="btn btn-primary">Novo cliente</a>
+        <a asp-controller="Tattoos" asp-action="Create" class="btn btn-outline-secondary">Nova sessao</a>
+    </div>
+</section>
 
 <div class="row g-3">
     <div class="col-md-4">
-        <div class="border rounded p-3 h-100 bg-light">
-            <h4>Clientes</h4>
-            <p class="text-muted">Cadastre contatos e consulte o historico de sessoes de cada pessoa.</p>
-            <a asp-controller="Clients" asp-action="Index">Ver clientes</a>
+        <div class="panel h-100">
+            <div class="panel-body">
+                <div class="page-kicker">Cadastro</div>
+                <h2 class="h4">Clientes</h2>
+                <p class="text-muted">Consulte contatos, dados pessoais e historico completo de cada pessoa.</p>
+                <a asp-controller="Clients" asp-action="Index" class="btn btn-outline-secondary">Abrir clientes</a>
+            </div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="border rounded p-3 h-100 bg-light">
-            <h4>Sessoes</h4>
-            <p class="text-muted">Registre data, descricao, forma de pagamento e valor pago.</p>
-            <a asp-controller="Tattoos" asp-action="Index">Ver sessoes</a>
+        <div class="panel h-100">
+            <div class="panel-body">
+                <div class="page-kicker">Atendimento</div>
+                <h2 class="h4">Sessoes</h2>
+                <p class="text-muted">Registre data, descricao, forma de pagamento e valor recebido.</p>
+                <a asp-controller="Tattoos" asp-action="Index" class="btn btn-outline-secondary">Abrir sessoes</a>
+            </div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="border rounded p-3 h-100 bg-light">
-            <h4>Resumo financeiro</h4>
-            <p class="text-muted">Filtre atendimentos por periodo e acompanhe o valor arrecadado.</p>
-            <a asp-controller="Tattoos" asp-action="Summary">Abrir resumo</a>
+        <div class="panel h-100">
+            <div class="panel-body">
+                <div class="page-kicker">Financeiro</div>
+                <h2 class="h4">Resumo</h2>
+                <p class="text-muted">Filtre por periodo e acompanhe quantidade de sessoes e valor arrecadado.</p>
+                <a asp-controller="Tattoos" asp-action="Summary" class="btn btn-outline-secondary">Abrir resumo</a>
+            </div>
         </div>
     </div>
 </div>

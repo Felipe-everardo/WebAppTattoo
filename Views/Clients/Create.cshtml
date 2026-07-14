@@ -4,12 +4,16 @@
     ViewData["Title"] = "Novo cliente";
 }
 
-<h1>Novo cliente</h1>
-<p class="text-muted">Registre os dados principais para vincular futuras sessoes.</p>
-<hr />
+<section class="page-header">
+    <div>
+        <div class="page-kicker">Cadastro</div>
+        <h1>Novo cliente</h1>
+        <p class="page-description">Registre os dados principais para vincular futuras sessoes.</p>
+    </div>
+</section>
 
-<div class="row">
-    <div class="col-md-6">
+<div class="panel form-panel">
+    <div class="panel-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group mb-3">

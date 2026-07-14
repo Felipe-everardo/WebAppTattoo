@@ -4,40 +4,49 @@
     ViewData["Title"] = "Clientes";
 }
 
-<div class="d-flex align-items-center justify-content-between mb-3">
+<section class="page-header">
     <div>
-        <h1 class="mb-1">Clientes</h1>
-        <p class="text-muted mb-0">Cadastro base para acompanhar contatos e historico de sessoes.</p>
+        <div class="page-kicker">Cadastro</div>
+        <h1>Clientes</h1>
+        <p class="page-description">Cadastro base para acompanhar contatos e historico de sessoes.</p>
     </div>
-    <a asp-action="Create" class="btn btn-primary">Novo cliente</a>
-</div>
+    <div class="toolbar">
+        <a asp-action="Create" class="btn btn-primary">Novo cliente</a>
+    </div>
+</section>
 
-<table class="table table-hover align-middle">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Name)</th>
-            <th>@Html.DisplayNameFor(model => model.CellPhone)</th>
-            <th>@Html.DisplayNameFor(model => model.Email)</th>
-            <th>@Html.DisplayNameFor(model => model.CPF)</th>
-            <th>@Html.DisplayNameFor(model => model.Instagram)</th>
-            <th class="text-end">Acoes</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="panel table-panel">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.CellPhone)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.CPF)</th>
+                <th>@Html.DisplayNameFor(model => model.Instagram)</th>
+                <th class="text-end">Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
 @foreach (var item in Model)
 {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.CellPhone)</td>
-            <td>@Html.DisplayFor(modelItem => item.Email)</td>
-            <td>@Html.DisplayFor(modelItem => item.CPF)</td>
-            <td>@Html.DisplayFor(modelItem => item.Instagram)</td>
-            <td class="text-end">
-                <a asp-action="Details" asp-route-id="@item.Id">Historico</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a class="link-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="fw-semibold">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.CellPhone)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.CPF)</td>
+                <td>@Html.DisplayFor(modelItem => item.Instagram)</td>
+                <td>
+                    <div class="actions">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Historico</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
+                    </div>
+                </td>
+            </tr>
 }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
